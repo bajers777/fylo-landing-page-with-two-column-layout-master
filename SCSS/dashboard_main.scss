@@ -1,0 +1,86 @@
+@import './extends', './variables';
+*{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+
+}
+.wrapper{
+    @extend %flex-center;
+}
+.feedback{
+    width: 80%;
+    flex-flow: column;
+}
+.feedback_buttons{
+    display: flex;
+    justify-content: flex-end;
+    // border-bottom: 3px solid hsl(240, 75%, 98%);
+    button{
+        margin-left: 10px;
+        margin-bottom: 10px;
+        height: 25px;
+        border-radius: 5px;
+        border-style: none;
+        background-color: $primaryTextColor;
+        font-weight: bold;
+        letter-spacing: .1rem;
+        color: hsl(0, 0%, 100%);
+        cursor: pointer;
+    }
+}
+.feedback_body{
+    table{
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        text-align: center;
+        tbody{
+            width: 100%;
+            // border: 3px solid hsl(240, 75%, 98%);
+        }
+        td{
+            border-bottom: 3px solid hsl(240, 75%, 98%);
+            padding: 1rem;
+            width: 100%;
+        }
+        td:nth-child(1){
+            width: 0;
+        }
+        td:nth-child(2),
+        td:nth-child(3){
+            width: 30%;
+        }
+        td:nth-child(4){
+            width: 20%;
+        }
+        
+    }
+    &-header{
+        font-size: 1rem;
+        font-weight: bold;
+        .feedbackRefresh{
+            cursor: pointer;
+        }
+    }
+    &-buttons{
+        font-size: 1rem;
+        @media screen and (max-width: 860px){
+            display: flex;
+            flex-flow: column nowrap;
+            i{
+                padding: 5px 0;
+            }
+        }
+        i{
+            padding: 0 5px;
+            cursor: pointer;
+            transition: scale .1s ease-in;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    .company,.email,.name{
+        font-size: .75rem;
+    }
+}

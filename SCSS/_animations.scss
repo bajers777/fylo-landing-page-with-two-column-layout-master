@@ -1,0 +1,38 @@
+@keyframes slideIn {
+    0%{
+        display: none;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100%{
+        visibility: visible;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+   } 
+}
+@keyframes slideOut{
+    0%{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    99%{
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100%{
+        display: none;
+    }
+}
+
+@keyframes feedbackArrow{
+    0%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX(10px);
+    }
+}

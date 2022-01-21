@@ -1,0 +1,467 @@
+//font-family: 'Open Sans', sans-serif;
+//font-family: 'Raleway', sans-serif;
+@import './variables', './extends', './mixins', './animations';
+
+
+*{
+    box-sizing: border-box;
+}
+
+//GLOBAL SETTINGS
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    margin: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    //DESKTOP
+    @include desktop{
+        margin-left: 0;
+        font-size: 1.5rem;
+        text-align: left;
+        line-height: 2.5rem;
+    }
+}
+h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+p,b{
+    color: $primaryTextColor;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    margin: 1rem;
+    @include desktop{
+        margin: 0;
+        font-size: .8rem;
+        letter-spacing: 0;
+    }
+}
+.curved-bg{
+    margin-top: 3rem;
+    img{
+        display: block;
+        width: 100%
+    }
+}
+.href-button-style{
+    padding: .5rem 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: .05rem;
+    color: hsl(170, 45%, 43%);
+    border-style: none;
+    border-bottom: 2px solid hsl(170, 45%, 43%);
+    background-color: transparent;
+    cursor: pointer;
+    &::after{
+        // position: absolute;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        transform: translate(15%, 25%);
+        background: url('/images/icon-arrow.svg') no-repeat;
+        background-size: contain;
+        content: '';        
+    }
+}
+.social-media{
+    @extend %flex-center;
+    &_icon{
+        @extend %flex-center;
+        width: 25px;
+        height: 25px;
+        padding: 1rem;
+        margin: 0 .25rem;
+        border-radius: 50px;
+        border: 2px solid hsl(0, 0%, 100%);
+    }
+}
+.emailFormButton{
+    height: 35px;
+    border-radius: 3px;
+    border-style: none;
+    margin-top: .5rem;
+    background-color: $buttonBgcolor;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+.emailForm{
+    @extend %flex-center;
+    flex-flow: column nowrap;
+    margin-top: 1rem;
+    input,button{
+        width: 100%;
+        height: 35px;
+        border-radius: 3px;
+        border-style: none;
+    }
+    input{
+        padding: 0 1rem;
+        color: hsl(0, 0%, 75%);
+        border: 1px solid $primaryTextColor;
+    }
+    button{
+        margin-top: .5rem;
+        background-color: $buttonBgcolor;
+        font-weight: bold;
+        letter-spacing: .1rem;
+        color: hsl(0, 0%, 100%);
+        cursor: pointer;
+    }
+    //DESKTOP FROM 800px
+    @media screen and (min-width: 800px){
+        justify-content: left;
+        input{
+            width: 50%;
+        }
+        button{
+            // width: 150px;
+            margin: 0 1rem;
+            font-weight: normal;
+        }
+    }
+}
+//------------------------
+//SECTION STYLING
+header{
+    font-family: 'Raleway', sans-serif;
+    color: $primaryTextColor;
+    nav{
+        @extend %flex-center;
+        .logo{
+            @extend %flex-center;
+            padding: 2rem;
+            img{
+                width: 100%;
+            }
+        }
+        ul{
+            display: flex;
+            justify-content: right;
+            width: 70%;
+            list-style: none;
+            padding: 0;
+            li{
+                display: inline-block;
+                padding: 1rem;
+            }
+        }
+    }
+    img{
+        width: 100%;
+    }
+    .hero-container{
+        @extend %flex-center;
+        flex-flow: column nowrap;
+        p{
+            text-align: center;
+        }
+        &_text{
+            @extend %flex-center;
+            flex-flow: column nowrap;
+        }
+        form{
+            width: 100%;
+            max-width: 550px;
+            padding: 0 1.5rem;
+            button{
+                box-shadow: 2px 3px 5px 0 hsl(0, 0%, 75%);
+            }
+        }
+        @include desktop{
+            flex-flow: row-reverse nowrap;
+            p{
+                text-align: left;
+            }
+            img{
+                @include centerContainerPosition(padding-right);
+                
+            }
+            &_text{
+                align-items: flex-start;
+                @include centerContainerPosition(padding-left);
+            }
+            form{
+                width: 100%;
+                max-width: 100%;
+                flex-flow: row nowrap;
+                padding: 0;
+                button{
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+.product-spec{
+    @extend %flex-center;
+    flex-flow: column nowrap;
+    padding: 0 1rem;
+    padding-bottom: 15%;
+    background-color: $testimonialBgcolor;
+    @include desktop{
+        flex-flow: row-reverse nowrap;
+        justify-content: left;
+    }
+    img{
+        width: 100%;
+    }
+    h2{
+        margin: 2rem 0;
+        @include desktop{
+            text-align: left;
+        }
+    }
+    p{
+        margin: .5rem 0;
+    }
+    &_header{
+        @include desktop{
+            @include centerContainerPosition(padding-right);
+            img{
+                margin-left: 5rem;
+            }
+        }
+    }
+    &_body{
+        display: flex;
+        flex-flow: column nowrap;
+        @include desktop{
+            @include centerContainerPosition(padding-left);
+            >p{
+                width: 80%;
+                max-width: 300px;
+            }       
+        }
+        button{
+            margin: 2rem auto;
+            @include desktop{
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    .testimonialCard{
+        display: flex;
+        flex-flow: column nowrap;
+        width: 80%;
+        max-width: 500px;
+        margin: auto;
+        @media screen and (min-width: 800px){
+            margin: 0;
+        }
+        padding: 1.5rem;
+        background-color: hsl(0, 0%, 100%);
+        font-size: 1.25rem;
+        border-radius: 5px;
+        box-shadow: 1px 1px 25px 0 hsl(0, 0%, 75%);
+        &_text{
+            p{
+                width: 100%;
+            }
+            img{
+                width: 5%;
+            }
+        }
+        &_person{
+            display: flex;
+            flex-flow: row nowrap;
+            img{
+                width: 50px;
+                height: 50px;
+                margin-right: 1.5rem;
+                border-radius: 50px;
+            }
+            b{
+                font-size: 1rem;
+            }
+            small{
+                font-size: .75rem;
+            }
+            &-name{
+                display: flex;
+                flex-flow: column nowrap;
+            }
+        }
+    }
+}
+.client-testimonial{
+    padding: 3rem 0;
+    background-color: $testimonialBgcolor;
+}
+.sign-form{
+    *{
+        color: $secondaryTextColor;
+        text-align: center;
+    }
+    @extend %flex-center;
+    flex-flow: column nowrap;
+    padding: 3rem 1em;
+    background-color: hsl(238, 22%, 44%);
+    form{
+        width: 100%;
+        max-width: 430px;
+        padding: 1.5rem;
+        flex-flow: column nowrap;
+        button{
+            box-shadow: 2px 3px 5px 0 hsl(0, 0%, 35%);
+        }
+    }
+    @include desktop{
+        flex-flow: row nowrap;
+        &_text{
+            @include centerContainerPosition(padding-left);
+            *{
+                text-align: left;
+            }
+            p{
+                width: 80%;
+            }
+        }
+        form{
+            @include centerContainerPosition(padding-right);
+            input{
+                width: 100%;
+            }
+            button{
+                align-self: flex-start;
+                // width: 150px;
+                width: 50%;
+                max-width: 180px;
+                letter-spacing: 0;
+                margin: .5rem 0;
+            }
+        }
+    }
+}
+footer{
+    @extend %flex-center;
+    background-color: $primaryTextColor;
+    color: $secondaryTextColor;
+    padding: 2rem;
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            padding: .5rem 0;
+            img{
+                padding-right: .5rem;
+            }
+        }
+    }
+    @include desktop{
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            align-items: start;
+            justify-items: start;
+            column-gap: 5rem;
+                .footer-logo{
+                    grid-column: 1/5;
+                    grid-row: 1/3;
+                }
+                address{
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                }
+                .middle-menu{
+                    grid-column: 2/3;
+                    grid-row: 3/4;
+                }
+                .right-menu{
+                    grid-column: 3/4;
+                    grid-row: 3/4;
+                }
+                .social-media{
+                    margin-top: 1rem;
+                    grid-column: 4/5;
+                    grid-row: 3/4;
+                }
+        }
+        }
+}
+.viewFeedbackForm{
+    // display: flex;
+    // align-items: center;
+    @extend %flex-center;
+    width: 70px;
+    height: 50px;
+    top: 60vh;
+    position: fixed;
+    font-weight: bold;
+    text-align: left;
+    border-style: none;
+    border-radius: 0 15px 15px 0;
+    background-color: $primaryTextColor;
+    cursor: pointer;
+    transition: width .1s ease-in, height .2s ease-in;
+    &:hover{
+        width: 150px;
+        height: 100px;
+    }
+    i{
+        color: white;
+    }
+    .hiddenButtonText{
+        // position: aboslute;
+        width: 50%;
+        color: white;
+        font-size: .75rem;
+        text-decoration: underline;
+    }
+}
+.feedbackForm{
+    @extend %flex-center;
+    flex-flow: column nowrap;
+    width: 60%;
+    max-width: 400px;
+    position: fixed;
+    padding: 2rem;
+    color: $primaryTextColor;
+    background-color: hsl(240, 75%, 98%);
+    border:hsl(238, 22%, 44%) 2px solid;
+    border-radius: 15px;
+    text-align: center;
+    animation: slideIn .3s forwards;
+    input,textarea{
+        width: 100%;
+        resize: none;
+        padding: 1rem;
+        margin: .25rem 0;
+        color: inherit;
+        font-family: inherit;
+        font-size: .75rem;
+    }
+    h3,p{
+        padding: .25rem 0;
+    }
+    button{
+        font-weight: normal;
+        letter-spacing: .15rem;
+    }
+}
+.siteBgGray{
+    background-color: hsla(0, 0%, 50%, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.hidden{
+    display: none;
+}
+.hiddenForm{
+    animation: slideOut .3s;
+    display: none;
+}

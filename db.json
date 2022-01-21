@@ -1,0 +1,46 @@
+{
+  "feedback": [
+    {
+      "company": "Microsof",
+      "name": "Jason",
+      "email": "jason@microsoft.com",
+      "feedbackText": "Hey, I really like your app man this is most useful thing I've ever use. Thank you FYLO for everything.",
+      "id": 2
+    },
+    {
+      "company": "JASON INC.",
+      "name": "Matheus",
+      "email": "matheus@jasoninc.com",
+      "feedbackText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a ornare metus. Donec molestie sollicitudin elit, vitae dignissim odio dapibus eu. Vivamus est enim, gravida congue elementum at, venenatis eu felis. Donec ipsum elit, scelerisque nec pulvinar sit amet, ultricies sit amet orci. In hac habitasse platea dictumst. Phasellus rutrum lorem id sapien viverra tristique. Maecenas at vehicula mauris, a placerat lorem. Etiam consequat at quam eleifend egestas. ",
+      "id": 3
+    },
+    {
+      "company": "EXCO Sp. z O. O.",
+      "name": "Justyna",
+      "email": "jgo@exco.pl",
+      "feedbackText": "Aliquam iaculis porta volutpat. Ut mauris metus, bibendum sit amet feugiat non, ullamcorper id ante. Mauris consectetur sapien orci, vitae pellentesque elit laoreet ac. Maecenas porta, lectus eu malesuada consequat, lectus ante sagittis massa, a sollicitudin turpis dolor non est. Quisque ut velit id lorem placerat maximus. Nullam porta elementum purus, volutpat lobortis urna placerat quis. Integer bibendum orci metus",
+      "id": 4
+    },
+    {
+      "company": "TINA INC",
+      "name": "Pablo Escobar",
+      "email": "pablito@gorgita.pl",
+      "feedbackText": "Hey! Your app is amazing, I love you!!!! ",
+      "id": 5
+    },
+    {
+      "company": "asdjahsdiuhasiu",
+      "name": "asiudhias",
+      "email": "asiudhaiu@asdhiuas.pl",
+      "feedbackText": "sadjaoisdjaosi",
+      "id": 6
+    },
+    {
+      "company": "Bajerowcy Sp. z O. O.",
+      "name": "Łukasz",
+      "email": "lukasz@bajerowscy.pl",
+      "feedbackText": "Thank you for your time spend on creating this masterpiece! You're the best!!!! Oh mighty creator of greatest app, oh my lord of construction!",
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.feedback {
+  width: 80%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.feedback_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.feedback_buttons button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  height: 25px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #070439;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.feedback_body table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.feedback_body table tbody {
+  width: 100%;
+}
+
+.feedback_body table td {
+  border-bottom: 3px solid #f6f6fe;
+  padding: 1rem;
+  width: 100%;
+}
+
+.feedback_body table td:nth-child(1) {
+  width: 0;
+}
+
+.feedback_body table td:nth-child(2),
+.feedback_body table td:nth-child(3) {
+  width: 30%;
+}
+
+.feedback_body table td:nth-child(4) {
+  width: 20%;
+}
+
+.feedback_body-header {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.feedback_body-header .feedbackRefresh {
+  cursor: pointer;
+}
+
+.feedback_body-buttons {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 860px) {
+  .feedback_body-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .feedback_body-buttons i {
+    padding: 5px 0;
+  }
+}
+
+.feedback_body-buttons i {
+  padding: 0 5px;
+  cursor: pointer;
+  -webkit-transition: scale .1s ease-in;
+  transition: scale .1s ease-in;
+}
+
+.feedback_body-buttons i:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.feedback_body .company, .feedback_body .email, .feedback_body .name {
+  font-size: .75rem;
+}
+/*# sourceMappingURL=dashboard_main.css.map */
